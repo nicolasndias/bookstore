@@ -1,8 +1,6 @@
 from django.test import TestCase
-from rest_framework.exceptions import ValidationError
 
 from product.factories import CategoryFactory, ProductFactory
-from product.models import Product
 from product.serializers import CategorySerializer, ProductSerializer
 
 
@@ -30,10 +28,7 @@ class ProductSerializerTests(TestCase):
         category = CategoryFactory(title="Books")
         product = ProductFactory(title="Book", price=50, category=[category])
         data = ProductSerializer(product).data
-        self.assertEqual(
-            set(data.keys()),
-            {"id", "title", "description", "price", "active", "category", "categories_id"},
-        )
+        self.assertEqual(set(data.keys()), {"id", "title", "description", "price", "active", "category"})
         self.assertEqual(data["category"][0]["title"], category.title)
 
     def test_create_product_with_categories(self):
