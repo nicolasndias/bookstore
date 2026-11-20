@@ -1,5 +1,4 @@
 from django.test import TestCase
-from rest_framework import serializers
 
 from order.factories import UserFactory
 from order.models import Order
@@ -13,7 +12,7 @@ class OrderSerializerTests(TestCase):
         order = Order.objects.create(user=UserFactory())
         order.product.add(product)
         data = OrderSerializer(order).data
-        self.assertEqual(set(data.keys()), {"id", "product", "total", "user", "products_id"})
+        self.assertEqual(set(data.keys()), {"id", "product", "total", "user"})
         self.assertEqual(data["product"][0]["title"], product.title)
         self.assertEqual(data["total"], 100)
 
