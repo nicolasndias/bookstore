@@ -1,21 +1,22 @@
 [project]
 name = "bookstore"
 version = "0.1.0"
-description = "Bookstrore API"
+package-mode = false
+description = "description"
 authors = [
-    {name = "Nicolas",email = "nicolas.nd@hotmail.com"}
+    {name = "Arthur Faggundês",email = "arthurhfagundes6@gmail.com"}
 ]
-requires-python = ">=3.14"
+requires-python = ">=3.11"
 dependencies = [
-    "django (>=6.1.2,<7.0.0)",
-    "djangorestframework (>=3.18.3,<4.0.0)"
-]
-
-[dependency-groups]
-dev = [
-    "0 (>=0.0.0,<0.0.1)",
-    "pytest (>=9.2.0,<10.0.0)",
-    "factory-boy (>=3.3.3,<4.0.0)"
+    "pytest (>=9.1.1,<10.0.0)",
+    "factory-boy (>=3.3.3,<4.0.0)",
+    "django (==5.1)",
+    "djangorestframework (>=3.17.1,<4.0.0)",
+    "pytest-django (>=4.12.0,<5.0.0)",
+    "django-extensions (>=4.1,<5.0)",
+    "django-debug-toolbar (==4.4.6)",
+    "psycopg2-binary (>=2.9.12,<3.0.0)",
+    "gitpython (>=3.1.54,<4.0.0)"
 ]
 
 
